@@ -1,0 +1,262 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-2xl) 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  padding: 0 var(--spacing-xl);
+}
+
+.catalog-section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+.section-description {
+  font-size: 0.9375rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-2xl);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+  margin-top: var(--spacing-xl);
+}
+
+/* About Section */
+.about-section {
+  background: var(--color-surface);
+  padding: 80px 48px;
+  margin-bottom: 80px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #444, transparent);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content p {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.value-card {
+  background: var(--color-surface-2);
+  padding: 40px 32px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-white);
+  transition: width 0.4s ease;
+}
+
+.value-card:hover {
+  background: #222;
+  transform: translateY(-4px);
+}
+
+.value-card:hover::before {
+  width: 100%;
+}
+
+.value-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  color: var(--color-white);
+  transition: var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-white);
+  background: #222;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.submit-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+  }
+
+  .section-description {
+    font-size: 0.875rem;
+    padding: 0 8px;
+  }
+
+  .catalog-section {
+    margin-bottom: 48px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .about-section {
+    padding: 48px 20px;
+    margin-bottom: 48px;
+  }
+
+  .about-content p {
+    font-size: 0.9375rem;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-top: 32px;
+  }
+
+  .value-card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .about-section {
+    padding: 36px 16px;
+  }
+}
